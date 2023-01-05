@@ -16,10 +16,12 @@ const app = express();
 
 app.use(cors());
 
-
 //Add Access Control Allow Origin headers
 app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "https://chatapp-doogle-u3tg.onrender.com");
+  res.setHeader(
+    "Access-Control-Allow-Origin",
+    "https://chatapp-doogle-u3tg.onrender.com"
+  );
   res.header(
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept"
@@ -27,9 +29,7 @@ app.use((req, res, next) => {
   next();
 });
 
-
 app.use(express.json());
-
 
 app.use("/api/user", userRoutes);
 app.use("/api/chat", chatRoutes);
@@ -52,7 +52,6 @@ if (process.env.NODE_ENV === "production") {
 
 //----------------------------Development-----------------------------------
 
-
 app.use(notFound);
 app.use(errorHandler);
 
@@ -66,7 +65,7 @@ const server = app.listen(
 const io = require("socket.io")(server, {
   pingTimeout: 60000,
   cors: {
-    origin: "http://localhost:3000",
+    origin: "*",
   },
 });
 
