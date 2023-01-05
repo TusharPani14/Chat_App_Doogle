@@ -29,7 +29,7 @@ const SingleChat = (fetchAgain, setFetchAgain) => {
   const [newMessage, setNewMessage] = useState("");
   const { user, selectedChat, setSelectedChat, notification, setNotification } =
     ChatState();
-  const [socketConnected, setSocketConnected] = useState();
+  const [socketConnected, setSocketConnected] = useState(false);
   const [typing, setTyping] = useState(false);
   const [isTyping, setIsTyping] = useState(false);
 
@@ -77,20 +77,6 @@ const SingleChat = (fetchAgain, setFetchAgain) => {
     }
   };
 
-  useEffect(() => {
-    socket = io(ENDPOINT);
-    socket.emit("setup", user);
-    socket.on("connected", () => setSocketConnected(true));
-    socket.on("typing", () => setIsTyping(true));
-    socket.on("stop typing", () => setIsTyping(false));
-  }, []);
-
-  useEffect(() => {
-    fetchMessages();
-
-    selectedChatCompare = selectedChat;
-  }, [selectedChat]);
-
   const sendMessage = async (event) => {
     if (event.key === "Enter" && newMessage) {
       socket.emit("stop typing", selectedChat._id);
@@ -127,6 +113,21 @@ const SingleChat = (fetchAgain, setFetchAgain) => {
       }
     }
   };
+
+  
+  useEffect(() => {
+    socket = io(ENDPOINT);
+    socket.emit("setup", user);
+    socket.on("connected", () => setSocketConnected(true));
+    socket.on("typing", () => setIsTyping(true));
+    socket.on("stop typing", () => setIsTyping(false));
+  }, []);
+
+  useEffect(() => {
+    fetchMessages();
+
+    selectedChatCompare = selectedChat;
+  }, [selectedChat]);
 
   useEffect(() => {
     socket.on("message recieved", (newMessageRecieved) => {
