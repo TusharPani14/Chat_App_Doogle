@@ -20,7 +20,7 @@ import io from "socket.io-client";
 import Lottie from "react-lottie";
 import animationData from "../animations/typing.json"
 
-const ENDPOINT = "https://chatappdoogle.web.app";
+const ENDPOINT = "https://chatapp-doogle-u3tg.onrender.com";
 var socket, selectedChatCompare;
 
 const SingleChat = (fetchAgain, setFetchAgain) => {
