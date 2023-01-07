@@ -164,8 +164,6 @@ The login page
 
 Chatting Interface
 
-[![Chat-App-3.jpg](https://i.postimg.cc/d3bJjk4P/Chat-App-3.jpg)](https://postimg.cc/Fkxt9KMD)
-
 [![Chat-App-4.jpg](https://i.postimg.cc/ZKNbKH5T/Chat-App-4.jpg)](https://postimg.cc/w768whNP)
 ## Acknowledgements
 
