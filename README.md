@@ -14,7 +14,7 @@ To deploy this project after cloning,  run
 
 Otherwise just click
 
-  [DOOGLE](https://chatapp-doogle-u3tg.onrender.com/)
+  [DOOGLE](https://chat-app-doogle.vercel.app/)
 
 
 
@@ -137,12 +137,6 @@ To run this project, you will need to add the following environment variables to
 `JWT_SECRET`
 
 `NODE_ENV`
-
-## Authors
-
-- [@TusharPani14](https://github.com/TusharPani14)
-- [@Satyam](https://github.com/TusharPani14)
-- [@anuragpraasad](https://github.com/anuragpraasad)
 
 
 ## Tech Stack
